@@ -16,8 +16,12 @@ async function bootstrap() {
   app.use(helmet());
 
   // CORS
+  const corsOrigins = process.env.CORS_ORIGIN 
+    ? process.env.CORS_ORIGIN.split(',') 
+    : 'http://localhost:3000';
+
   app.enableCors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    origin: corsOrigins,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
