@@ -10,4 +10,6 @@
     {
       "source": "/(.*)",
       "destination": "/src/main.ts"
+    }
+  ]
 }
