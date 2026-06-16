@@ -18,7 +18,11 @@ async function bootstrap() {
   // CORS
   const corsOrigins = process.env.CORS_ORIGIN 
     ? process.env.CORS_ORIGIN.split(',') 
-    : ['http://localhost:3000', 'https://interviewflowai.vercel.app'];
+    : [
+        'http://localhost:3000', 
+        'https://interviewflowai.vercel.app',
+        /\.vercel\.app$/
+      ];
 
   app.enableCors({
     origin: corsOrigins,
